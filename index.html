@@ -297,7 +297,7 @@
         }
 
         .glass-panel {
-            background: rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 25px;
@@ -312,7 +312,7 @@
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
             --table-font: 2.8vmin;
-            --btn-font: 4vmin;
+            --btn-font: 5vmin;
         }
 
         /* 左右の人の時（is-side）のサイズ決定版 */
@@ -393,8 +393,8 @@
         }
 
         .mangan-grid button {
-            padding: 1vmin 2vmin;
-            border-radius: 1vmin;
+            padding: 3vmin 2vmin;
+            border-radius: 2vmin;
             border: none;
             background: #1e293b;
             color: var(--white);
@@ -616,12 +616,12 @@
                 <button class="tsumo-btn" onclick="cancelDoubleRon()"
                     style="font-size: 2.5vmin; background: #64748b;">中止</button>
             </div>
+        </div>
+    </div>
 
-        </div>
-        <div id="select-prompt" onclick="if(event.target === this) cancelSelectMode()">
-            <span id="select-prompt-text"></span>
-            <button class="tsumo-btn cancel-btn" onclick="cancelSelectMode()">中止</button>
-        </div>
+    <div id="select-prompt" onclick="if(event.target === this) cancelSelectMode()">
+        <span id="select-prompt-text"></span>
+        <button class="tsumo-btn cancel-btn" onclick="cancelSelectMode()">中止</button>
     </div>
 
     <div id="overlay" onclick="if(event.target === this) cancel()">
@@ -664,7 +664,7 @@
         style="display:none; position:fixed; inset:0; z-index:100; justify-content:center; align-items:center;"
         onclick="if(event.target === this) closeRyukyoku()">
         <div class="glass-panel" style="width: auto; padding: 30px;">
-            <h3 style="margin:0; text-align:center; font-size:4vmin;">流局 (聴牌者を選択)</h3>
+            <h3 style="margin:0; text-align:center; font-size:5vmin;">流局 (聴牌者を選択)</h3>
 
             <div id="tenpai-selectors"
                 style="display:grid; grid-template-areas: '. top .' 'left center right' '. bottom .'; grid-template-columns: 15vmin 15vmin 15vmin; grid-template-rows: 15vmin 15vmin 15vmin; gap: 2vmin; margin-top: 20px; justify-content: center;">
@@ -1053,7 +1053,7 @@
             for (let i = 0; i < playerCount; i++) {
                 // 三麻で左(left)の時はボタンを作らない
                 let currentWind = winds[(i - firstLeader - kyoku + 1 + 5 * playerCount) % playerCount];
-                let bg = tenpaiStatus[i] ? 'var(--win)' : 'rgba(255,255,255,0.1)';
+                let bg = tenpaiStatus[i] ? 'var(--win)' : 'rgba(255,255,255,0.4)';
                 let border = tenpaiStatus[i] ? 'none' : '2px solid #475569';
 
                 html += `<button onclick="toggleTenpai(${i})" style="grid-area: ${gridAreas[i]}; width: 100%; height: 100%; background:${bg}; border:${border}; color:white; border-radius:2vmin; font-weight:bold; font-size:5vmin; transition:0.2s;">${currentWind}</button>`;
